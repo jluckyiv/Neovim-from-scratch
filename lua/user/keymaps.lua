@@ -69,11 +69,11 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- URL handling
 if vim.fn.has("mac") == 1 then
-  keymap("", "gx",'<Cmd>call jobstart(["open", expand("<cfile>")], {"detach": v:true})<CR>', opts)
+	keymap("n", "gx", '<Cmd>call jobstart(["open", expand("<cfile>")], {"detach": v:true})<CR>', opts)
 elseif vim.fn.has("unix") == 1 then
-  keymap("", "gx",'<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>', opts)
+	keymap("n", "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>', opts)
 else
-  keymap("", "gx",'<Cmd>lua print("Error: gx is not supported on this OS!")<CR>', opts)
+	keymap("n", "gx", '<Cmd>lua print("Error: gx is not supported on this OS!")<CR>', opts)
 end
 
 -- NOHL
